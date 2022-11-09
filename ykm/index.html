@@ -1064,15 +1064,14 @@
     .contented .timer_preview {
       color: #000;
       font-family: PingFangSC-Semibold;
-      /* font-size: 8vw; */
-      /* 原本的尺寸在9se上太大了*/
-      font-size: 7vw;
+      font-size: 8vw;
       font-weight: 500;
       letter-spacing: 0;
       line-height: 8vw;
       text-align: center;
       vertical-align: middle;
-      width: 60vw
+      width: 60vw;
+      white-space: nowrap
     }
 
     @keyframes fade {
@@ -2122,4 +2121,22 @@
         <image class="fy_acyion_img" src="./static/eb0bdecffb0b41192f65fbaee7cb5d39.png"></image>
       </div><br>
     </div>
-    <script>const covid_test_time = new Date((new Date).getTime() + 60 * (300 - Math.floor(480 * Math.random())) * 1e3).toISOString().replace("T", " ").slice(0, 16); function updateTime() { document.getElementsByClassName("timer_preview")[0].innerText = new Date((new Date).getTime() + 288e5).toISOString().replace("T", " ").slice(5, 19) } document.getElementById("covid-test-time").innerText = covid_test_time, updateTime(), window.setInterval(updateTime, 1e3); let _name = localStorage.getItem("_name") || "习*平", _city = localStorage.getItem("_city") || "广州"; document.getElementsByClassName("header_name_box")[0].addEventListener("click", () => { var e = window.prompt("修改名字：", _name); "" == e || null == e ? localStorage.removeItem("_name") : localStorage.setItem("_name", e), document.getElementById("_name").innerText = _name = e || "习*平" }), document.getElementsByClassName("header_city")[0].addEventListener("click", () => { var e = window.prompt("修改城市：", _city); "" == e || null == e ? localStorage.removeItem("_city") : localStorage.setItem("_city", e), document.getElementById("_city").innerText = _city = e || "广州" }), document.getElementById("_name").innerText = _name, document.getElementById("_city").innerText = _city</script>
+    <script>
+      const covid_test_time = new Date((new Date).getTime() + 60 * (300 - Math.floor(480 * Math.random())) * 1e3).toISOString().replace("T", " ").slice(0, 16);
+
+      function updateTime() {
+        document.getElementsByClassName("timer_preview")[0].innerText = new Date((new Date).getTime() + 288e5).toISOString().replace("T", " ").slice(5, 19)
+      }
+      document.getElementById("covid-test-time").innerText = covid_test_time, updateTime(), window.setInterval(updateTime, 1e3);
+      let _name = localStorage.getItem("_name") || "习*平",
+        _city = localStorage.getItem("_city") || "广州";
+      document.getElementsByClassName("header_name_box")[0].addEventListener("click", () => {
+        var e = window.prompt("修改名字：", _name);
+        "" == e || null == e ? localStorage.removeItem("_name") : localStorage.setItem("_name", e), document.getElementById("_name").innerText = _name = e || "习*平"
+      }),
+      document.getElementsByClassName("header_city")[0].addEventListener("click", () => {
+        var e = window.prompt("修改城市：", _city);
+        "" == e || null == e ? localStorage.removeItem("_city") : localStorage.setItem("_city", e), document.getElementById("_city").innerText = _city = e || "广州"
+      }),
+      document.getElementById("_name").innerText = _name, document.getElementById("_city").innerText = _city
+    </script>
